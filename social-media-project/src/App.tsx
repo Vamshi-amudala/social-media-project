@@ -1,10 +1,25 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 import './App.css';
+import { Main } from './pages/main';
+import { Navbar } from './components/Navbar';
+import { Login } from './pages/Login';
+import { Profile } from './pages/Profile';
 
 function App() {
   return (
     <div className="App">
-      hi
+      <Router>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Main/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/profile" element={<Profile/>} />
+          <Route path="/contact" element={<h1>Contact Page</h1>} />
+          <Route path="*" element={<h1>404 Not Found</h1>} />
+        </Routes>
+
+      </Router>
     </div>
   );
 }
