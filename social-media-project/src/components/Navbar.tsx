@@ -30,9 +30,12 @@ export const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="links">
-        <Link to="/">Home</Link> |
-        <Link to="/login">Login</Link> |
-        <Link to="/contact">Contact</Link> |
+        <Link to="/">Home</Link> 
+      { !user ? (
+        <Link to="/login">Login</Link> 
+      ): (
+        <Link to="/createpost">Create Post</Link> 
+      )}
         <Link to="/profile">Profile</Link>
       </div>
 
